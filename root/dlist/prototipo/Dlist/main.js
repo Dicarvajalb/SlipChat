@@ -1,33 +1,41 @@
 "use strict";
 const Dlist = require('./Dlist');
 const Cuenta = require('../Cuenta');
-/*
-function post(data, url){
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: data,
-        success: function (){ console.log("success")},
-        error: function() { console.log("error")}    
-    })
-}*/
 
-let n = 10000000;
-let a = "prueba " + n.toString() + " datos";
+// Cantidad datos de prueba n = 10k, 100k, 500k, 1M, 10M
+let n = 10000000; 
+
+
+// Inserción de datos
+console.time("Inserción de datos n = " + n.toString());
 let cuentas = new Dlist;
-//let url ='http://localhost:3000/cuentas';
-/*
-console.time(a);
-console.timeEnd(a);
-*/
-//let cuentaact = new Cuenta("mateo", "abcd1234");
-
 for (let i = 0; i < n; i++) {
     let cuenta = new Cuenta("name" + i, "password" + i);
     cuentas.pushBack(cuenta);
 }
+console.timeEnd("Inserción de datos n = " + n.toString());
 
-console.time(a);
-    cuentas.remove(0);
-    //cuentas.find("name"+(n-1));
-console.timeEnd(a);
+
+//Actualización de un dato
+let usuario = new Cuenta("Mateo", "m_contraseña");
+console.time("Actualización de un dato con n =" + n.toString());
+cuentas.set(n-1, usuario);
+console.timeEnd("Actualización de un dato con n =" + n.toString());
+
+
+//Eliminacion de un dato
+console.time("Eliminacion de un dato con n =" + n.toString());
+cuentas.remove(0);
+console.timeEnd("Eliminacion de un dato con n =" + n.toString());
+
+
+//Busqueda parcial
+console.time("Busqueda parcial de un dato con n =" + n.toString());
+cuentas.find("name"+n-1);
+console.timeEnd("Busqueda parcial de un dato con n =" + n.toString());
+
+
+//Consulta
+console.time("Consulta de un dato con n =" + n.toString());
+cuentas.get(n-1);
+console.timeEnd("Consulta de un dato con n =" + n.toString());

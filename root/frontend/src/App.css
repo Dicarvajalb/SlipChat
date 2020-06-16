@@ -1,0 +1,21 @@
+.Chat{
+  height: 400px;
+  width: 400px;
+  color: salmon;
+  overflow-y: scroll;
+
+  
+}
+
+.chat{
+  box-sizing: border-box;
+}
+
+
+.Carla{
+  color: brown
+}
+
+.Sam{
+  color: darkblue
+}

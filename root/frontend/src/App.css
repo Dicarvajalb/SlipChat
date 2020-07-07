@@ -1,0 +1,62 @@
+.pages div{
+  height: 400px;
+  width: 400px;
+  border-style: outset;
+  display: inline-flex
+}
+
+.Chat{
+  
+  color: salmon;
+  overflow-y: scroll;
+  
+  border-style: outset; 
+}
+
+.chat{
+  box-sizing: border-box;
+}
+
+ul li{
+  margin: 10px;
+  display: flex;
+  color: whitesmoke;
+  border-radius: 50px;
+  border: 2px whitesmoke;
+}
+
+.Carla{
+  justify-content: flex-end;
+  border: 2px solid lightgrey;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); 
+}
+
+.Sam{
+  justify-content: flex-start;
+  border: 2px solid lightgrey;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 28%, rgba(252,176,69,1) 100%);
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+}
+#table{
+  border-style: outset;
+}
+
+#table li{
+  margin: 10px;
+  border-style: inset;
+  border-color: coral;
+  word-spacing: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.PEncontradas{
+  text-decoration-color: coral;
+}
